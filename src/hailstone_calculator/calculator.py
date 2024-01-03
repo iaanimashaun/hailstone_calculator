@@ -13,7 +13,7 @@ class HailstoneCalculator:
         self.starting_number = starting_number
         self.sequence = [starting_number]
 
-    def calculate_hailstone_sequence(self, starting_number: int = 4) -> None:
+    def calculate_hailstone_sequence(self) -> None:
         """
         Calculates the hailstone sequence for the specified starting number.
 
@@ -24,9 +24,6 @@ class HailstoneCalculator:
         Returns:
         - None
         """
-        if starting_number is not None:
-            self.starting_number = starting_number
-            self.sequence = [starting_number]
 
         number = self.starting_number
         while number != 1:

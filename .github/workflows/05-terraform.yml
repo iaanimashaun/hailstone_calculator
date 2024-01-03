@@ -5,7 +5,7 @@ on:
     branches:
       - main
   workflow_run:
-    workflows: ["Lint", "Test", "Build and Publish hailstone_calculator Package", "Build and Push Docker Images"]
+    workflows: ["Build and Push Docker Images"]
     types:
       - completed
 

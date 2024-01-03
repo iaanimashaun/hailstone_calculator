@@ -7,7 +7,7 @@ on:
     # paths:
     #   - 'src/hailstone_calculator/**' 
   workflow_run:
-    workflows: ["Lint", "Test"]
+    workflows: ["Test"]
     types:
       - completed
 

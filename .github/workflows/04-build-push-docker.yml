@@ -8,7 +8,7 @@ on:
     branches:
       - main
   workflow_run:
-    workflows: ["Lint", "Test", "Build and Publish hailstone_calculator Package"]
+    workflows: ["Build and Publish hailstone_calculator Package"]
     types:
       - completed
 
