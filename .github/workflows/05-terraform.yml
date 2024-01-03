@@ -34,8 +34,8 @@ jobs:
           echo '${{ secrets.TERRAFORM_CONFIG_JSON }}' > config.json
 
           terraform init
-          terraform workspace new pre-prod || true
-          terraform workspace select pre-prod
+          terraform workspace new pre_prod || true
+          terraform workspace select pre_prod
           terraform apply -auto-approve
         env:
           AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION }} # Replace with your AWS region for pre-prod
