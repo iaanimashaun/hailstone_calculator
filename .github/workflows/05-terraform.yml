@@ -17,6 +17,7 @@ jobs:
       - name: Deploy to Pre-Prod
         run: |
           # Use the configuration file from the repository
+          ls
           cd infra/terraform
           
           # Write the "config.json" from the repository to the working directory

@@ -32,22 +32,22 @@ jobs:
           cd src
           python setup.py sdist 
 
-      - name: Build and upload
-        run: |
-          twine upload dist/* -u ${{ secrets.PYPI_USERNAME }} -p ${{ secrets.PYPI_PASSWORD }}
-        env:
-          TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
-          TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
-        working-directory: src
+      # - name: Upload
+      #   run: |
+      #     twine upload dist/* -u ${{ secrets.PYPI_USERNAME }} -p ${{ secrets.PYPI_PASSWORD }}
+      #   env:
+      #     TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
+      #     TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
+      #   working-directory: src
 
      
      
      
-      # - name: Upload package to Nexus Repository
-      #   run: |
-      #     twine upload -u $NEXUS_USERNAME -p $NEXUS_PASSWORD --repository-url $NEXUS_REPO_URL dist/*
-      #   env:
-      #     NEXUS_USERNAME: ${{ secrets.NEXUS_USERNAME }}
-      #     NEXUS_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
-      #     NEXUS_REPO_URL: ${{ secrets.NEXUS_REPO_URL }}
-      #   working-directory: src/hailstone_calculator
+      - name: Upload package to Nexus Repository
+        run: |
+          twine upload -u $NEXUS_USERNAME -p $NEXUS_PASSWORD --repository-url $NEXUS_REPO_URL dist/*
+        env:
+          NEXUS_USERNAME: ${{ secrets.NEXUS_USERNAME }}
+          NEXUS_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
+          NEXUS_REPO_URL: ${{ secrets.NEXUS_REPO_URL }}
+        working-directory: src

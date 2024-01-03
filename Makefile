@@ -40,7 +40,7 @@ SRC_DIR := /home/ubuntu/projects/hailstone/src
 
 build_publish_pypi:
 	cd $(SRC_DIR) && rm -rf dist/ && python setup.py sdist && \
-	twine upload -r pypi dist/*
+	twine upload -r nexus dist/*
 
 run:
 	docker build -t hailstone_calculator . > logs/build_errors.txt 2>&1
