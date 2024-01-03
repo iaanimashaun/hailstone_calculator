@@ -8,14 +8,15 @@ on:
     branches:
       - main
   workflow_run:
-    workflows: ["Build and Publish hailstone_calculator Package"]
+    workflows: ["Build and Publish Hailstone Calculator Package"]
     types:
       - completed
+
 
 jobs:
   build_and_push_images:
 
-     env:
+    env:
       FUNCTION_PATH: 'infra/aws/lambda/hailstone'
       FUNCTION_NAME: 'hailstone_function'
       AWS_REGION: ${{ secrets.AWS_REGION }}

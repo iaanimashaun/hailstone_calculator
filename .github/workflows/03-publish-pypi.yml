@@ -1,4 +1,4 @@
-name: Build and Publish hailstone_calculator Package
+name: Build and Publish Hailstone Calculator Package
 
 on:
   push:
