@@ -1,0 +1,25 @@
+{
+    "common_environment_variables": {
+      "AWS_ACCESS_KEY_ID": "AKIA3PGPRQRHLZ5BUXIU",
+      "AWS_SECRET_ACCESS_KEY": "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"
+    },
+    "dev_environment_variables": {
+      
+    },
+    "prod_environment_variables": {
+      
+    },
+    "workspace_configurations": {
+        "dev": {
+          "timeout": 60,
+          "memory_size": 128,
+          "size": 512
+        },
+        "prod": {
+          "timeout": 120,
+          "memory_size": 256,
+          "size": 512
+        }
+      }
+  }
+  

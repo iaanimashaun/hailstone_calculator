@@ -1,0 +1,53 @@
+name: Build and Publish hailstone_calculator Package
+
+on:
+  push:
+    branches:
+      - main
+    # paths:
+    #   - 'src/hailstone_calculator/**' 
+  workflow_run:
+    workflows: ["Lint", "Test"]
+    types:
+      - completed
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x  # Replace with desired Python version
+          
+      - name: Install dependencies
+        run: pip install twine setuptools
+
+      - name: Build the package
+        run: |
+          cd src
+          python setup.py sdist 
+
+      - name: Build and upload
+        run: |
+          twine upload dist/* -u ${{ secrets.PYPI_USERNAME }} -p ${{ secrets.PYPI_PASSWORD }}
+        env:
+          TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
+          TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
+        working-directory: src
+
+     
+     
+     
+      # - name: Upload package to Nexus Repository
+      #   run: |
+      #     twine upload -u $NEXUS_USERNAME -p $NEXUS_PASSWORD --repository-url $NEXUS_REPO_URL dist/*
+      #   env:
+      #     NEXUS_USERNAME: ${{ secrets.NEXUS_USERNAME }}
+      #     NEXUS_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
+      #     NEXUS_REPO_URL: ${{ secrets.NEXUS_REPO_URL }}
+      #   working-directory: src/hailstone_calculator

@@ -1,0 +1,7 @@
+version: '3'
+services:
+  hailstone-app:
+    build: .
+    stdin_open: true
+    tty: true
+

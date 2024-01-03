@@ -1,0 +1,30 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+  workflow_run:
+    workflows: ["Lint"]
+    types:
+      - completed
+
+jobs:
+  test_suites:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+
+      - name: Install dependencies
+        run: make install_test_dependencies
+
+      - name: Run Tests
+        run: make install_test_dependencies
+
+

@@ -1,0 +1,75 @@
+name: Deploy Terraform
+
+on:
+  push:
+    branches:
+      - main
+  workflow_run:
+    workflows: ["Lint", "Test", "Build and Publish hailstone_calculator Package", "Build and Push Docker Images"]
+    types:
+      - completed
+
+jobs:
+  deploy_pre_prod:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to Pre-Prod
+        run: |
+          # Use the configuration file from the repository
+          cd infra/terraform
+          
+          # Write the "config.json" from the repository to the working directory
+          echo '${{ secrets.TERRAFORM_CONFIG_JSON }}' > config.json
+
+          terraform init
+          terraform workspace new pre-prod || true
+          terraform workspace select pre-prod
+          terraform apply -auto-approve
+        env:
+          AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION }} # Replace with your AWS region for pre-prod
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+
+  manual-approval:
+    name: Manual Approval
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    # needs: deploy-staging
+    steps:
+    - uses: trstringer/manual-approval@v1
+      timeout-minutes: 60
+      with:
+        secret: ${{ github.TOKEN }}
+        approvers: iaanimashaun
+        minimum-approvals: 1
+        issue-title: "Deploying v1.0.0 to prod from staging"
+        issue-body: "Please approve or deny the deployment of version v1.0.0"
+        exclude-workflow-initiator-as-approver: false
+        additional-approved-words: ''
+        additional-denied-words: ''
+
+  deploy_prod:
+    runs-on: ubuntu-latest
+
+    needs: [manual-approval]
+    if: github.ref == 'refs/heads/main' # && needs.manual-approval.outputs.approval_granted == 'true'
+    steps:
+    
+      - name: Deploy to Prod
+        run: |
+          # Use the configuration file from the repository
+          cd infra/terraform
+          
+          # Write the "config.json" from the repository to the working directory
+          echo '${{ secrets.TERRAFORM_CONFIG_JSON }}' > config.json
+
+          terraform init
+          terraform workspace new prod || true
+          terraform workspace select prod
+          terraform apply -auto-approve
+        env:
+          AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION }}  # Replace with your AWS region for prod
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}

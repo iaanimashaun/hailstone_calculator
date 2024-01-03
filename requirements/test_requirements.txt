@@ -1,0 +1,5 @@
+-r requirements.txt
+
+# testing requirements
+pytest
+requests
