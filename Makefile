@@ -46,7 +46,8 @@ run:
 	docker build -t hailstone_calculator . > logs/build_errors.txt 2>&1
 	docker run -it --rm hailstone_calculator
 
-LAMBDA_FUNCTION_DIR := /home/ubuntu/projects/hailstone/infra/aws/lambda/hailstone_calculator
+# LAMBDA_FUNCTION_DIR := /home/ubuntu/projects/hailstone/infra/aws/lambda/hailstone_calculator
+LAMBDA_FUNCTION_DIR := infra/aws/lambda/hailstone_calculator
 LOG_DIR := /home/ubuntu/projects/hailstone/logs
 
 run_lambda:
@@ -58,7 +59,7 @@ LAMBDA_ARGS='{"starting_number": 7}'
 invoke_lambda_args:
 	curl "http://localhost:9000/2015-03-31/functions/function/invocations" -d $(LAMBDA_ARGS)
 
-TERRAFORM_DIR := /home/ubuntu/projects/hailstone/infra/terraform
+TERRAFORM_DIR := infra/terraform
 
 terraform_apply:
 	cd $(TERRAFORM_DIR) && terraform apply --auto-approve
