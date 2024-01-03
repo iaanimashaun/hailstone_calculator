@@ -48,7 +48,7 @@ run:
 
 # LAMBDA_FUNCTION_DIR := /home/ubuntu/projects/hailstone/infra/aws/lambda/hailstone_calculator
 LAMBDA_FUNCTION_DIR := infra/aws/lambda/hailstone_calculator
-LOG_DIR := /home/ubuntu/projects/hailstone/logs
+LOG_DIR := logs
 
 run_lambda:
 	cd $(LAMBDA_FUNCTION_DIR) && docker build --rm -t hailstone_calculator:test . > $(LOG_DIR)/build_errors.txt 2>&1 

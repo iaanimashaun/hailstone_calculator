@@ -1,7 +1,6 @@
 {
     "common_environment_variables": {
-      "AWS_ACCESS_KEY_ID": "AKIA3PGPRQRHLZ5BUXIU",
-      "AWS_SECRET_ACCESS_KEY": "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"
+      
     },
     "pre_prod_environment_variables": {
       

@@ -11,7 +11,7 @@ data "aws_ecr_repository" "hailstone_calculator" {
 
 
 resource "aws_ecr_lifecycle_policy" "hailstone_calculator_policy" {
-  repository = data.aws_ecr_repository.hailstone_calculator.repository_url
+  repository = "hailstone_calculator"
 
   policy = <<EOF
 {
