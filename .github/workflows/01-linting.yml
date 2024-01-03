@@ -24,7 +24,7 @@ jobs:
         sudo apt-get install make
 
     - name: Set up Environment File
-        run: echo "${{ secrets.ENV_FILE }}" > .env
+      run: echo "${{ secrets.ENV_FILE }}" > .env
 
 
     - name: Install Dependencies

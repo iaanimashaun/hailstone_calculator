@@ -5,6 +5,7 @@ from hailstone_calculator.calculator import HailstoneCalculator
 
 def lambda_handler(event, context):
     # Extract the starting_number from the Lambda event
+    print("event: ", event)
     starting_number = int(event.get("starting_number"))
 
     # Create an instance of HailstoneCalculator

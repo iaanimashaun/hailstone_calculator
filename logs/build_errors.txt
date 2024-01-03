@@ -15,17 +15,17 @@
 #4 DONE 0.0s
 
 #5 [internal] load build context
-#5 transferring context: 28B done
+#5 transferring context: 791B done
 #5 DONE 0.0s
 
 #6 [2/3] RUN pip install hailstone_calculator --target /var/task
 #6 CACHED
 
 #7 [3/3] COPY app.py /var/task
-#7 CACHED
+#7 DONE 0.1s
 
 #8 exporting to image
-#8 exporting layers done
-#8 writing image sha256:6300c8a7804c3eb18172361930a51e2059f41693b1eed653fdb500a3c640cabe done
+#8 exporting layers 0.0s done
+#8 writing image sha256:626c40215b29e7b8e419c204d4987617ae09853ef036e94f6f9e01d67d63cb0d done
 #8 naming to docker.io/library/hailstone_calculator:test done
 #8 DONE 0.0s
