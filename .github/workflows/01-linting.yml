@@ -23,6 +23,10 @@ jobs:
         sudo apt-get update
         sudo apt-get install make
 
+    - name: Set up Environment File
+        run: echo "${{ secrets.ENV_FILE }}" > .env
+
+
     - name: Install Dependencies
       run: |
         make install_linting_dependencies  

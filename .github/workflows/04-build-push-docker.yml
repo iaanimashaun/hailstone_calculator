@@ -46,6 +46,8 @@ jobs:
 
         echo "changes is: '${{ env.changes }}'"
 
+    - name: Set up Environment File
+      run: echo "${{ secrets.ENV_FILE }}" > .env
 
     - name: Build and Push Docker Image for Lambda Function
       if: ${{ env.changes }} == 'true'

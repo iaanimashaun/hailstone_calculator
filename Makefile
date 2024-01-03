@@ -1,12 +1,7 @@
 
 
 # Set the default environment to 'dev'
-ENV_FILE := .env.dev
-
-# Define environment-specific variables
-ifeq ($(ENV), prod)
-    ENV_FILE := .env.prod
-endif
+ENV_FILE := .env
 
 # Load environment variables from the selected .env file
 include $(ENV_FILE)

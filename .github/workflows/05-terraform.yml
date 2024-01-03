@@ -32,11 +32,11 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
 
-  manual-approval:
+  manual_approval:
     name: Manual Approval
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
-    # needs: deploy-staging
+    needs: deploy_pre_prod
     steps:
     - uses: trstringer/manual-approval@v1
       timeout-minutes: 60
@@ -53,7 +53,7 @@ jobs:
   deploy_prod:
     runs-on: ubuntu-latest
 
-    needs: [manual-approval]
+    needs: manual_approval
     if: github.ref == 'refs/heads/main' # && needs.manual-approval.outputs.approval_granted == 'true'
     steps:
     

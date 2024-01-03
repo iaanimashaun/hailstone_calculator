@@ -161,14 +161,3 @@ terraform.rc
 # Ignore any log files
 *.log
 
-
-
-
-
-
-
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/iaanimashaun/hailstone_calculator.git
