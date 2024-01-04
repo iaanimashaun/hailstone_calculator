@@ -4,10 +4,6 @@ data "aws_ecr_repository" "hailstone_calculator" {
   name     = "hailstone_calculator"
 }
 
-# resource "aws_ecr_repository" "hailstone_calculator" {
-#   name = "hailstone_calculator"
-# }
-
 
 
 resource "aws_ecr_lifecycle_policy" "hailstone_calculator_policy" {
