@@ -4,7 +4,7 @@ This repository contains the source code and deployment scripts for the Hailston
 
 ## Overview
 
-The Hailstone Calculator is a Python application that calculates the Hailstone sequence for a given starting number. It includes Docker containerization, AWS Lambda deployment, and Terraform infrastructure deployment.
+The Hailstone Calculator is a Python application that calculates the Hailstone sequence for a given starting number. It includes Docker containerization, Terraform infrastructure provisioning and AWS Lambda deployment.
 
 ## Getting Started
 
@@ -26,7 +26,7 @@ The following documents provide step-by-step instructions:
 
 ## AWS Lambda Deployment
 
-- Deploy the AWS Lambda function using `make build_push` then `make terraform_apply`.
+- Deploy the AWS Lambda function using `make build_push` then `make terraform_all`.
 - Ensure AWS credentials are configured.
 
 

@@ -103,6 +103,8 @@ terraform_apply:
 	# Apply Terraform infrastructure changes
 	cd $(TERRAFORM_DIR) && terraform apply --auto-approve
 
+terraform_all: terraform_init terraform_plan terraform_apply
+
 
 .PHONY: all
 
