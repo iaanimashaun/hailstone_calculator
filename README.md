@@ -10,9 +10,9 @@ The Hailstone Calculator is a Python application that calculates the Hailstone s
 
 The following documents provide step-by-step instructions:
 
-- [Architecture Documentation](./docs/Architecture/architecture.md)
-- [Dependencies Documentation](./docs/Dependencies/dependencies.md)
-- [Deployment Documentation](./docs/Deployment/deployment.md)
+- [Architecture](./docs/Architecture/architecture.md)
+- [Dependencies](./docs/Dependencies/dependencies.md)
+- [Deployment](./docs/Deployment/deployment.md)
 - [Tools](./docs/Deployment/tools.md)
 
 ## Local Development

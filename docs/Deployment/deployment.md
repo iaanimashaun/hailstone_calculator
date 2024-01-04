@@ -102,7 +102,7 @@ This will build the Docker image and push it to Amazon ECR
 
 For deploying infrastructure using Terraform, follow these steps:
 
-To use remote backend, create an s3 bucket and dynamodb and configure in ```infra/terraform/backend.tf```
+To use remote backend, create an s3 bucket and dynamodb and configure in ```infra/terraform/backend.tf```. If using local backend, comment out the backend configuration.
 
 ```bash
 make terraform_init
