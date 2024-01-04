@@ -7,9 +7,11 @@ class HailstoneCalculator:
         Initializes the HailstoneCalculator.
 
         Parameters:
-        - starting_number (int): The starting number
-        for the hailstone sequence.
+        - starting_number (int): The starting number for the hailstone sequence.
         """
+        if starting_number <= 0:
+            raise ValueError("Starting number must be a positive integer.")
+        
         self.starting_number = starting_number
         self.sequence = [starting_number]
 
@@ -17,14 +19,9 @@ class HailstoneCalculator:
         """
         Calculates the hailstone sequence for the specified starting number.
 
-        Parameters:
-        - starting_number (int): The new starting number.
-          If not provided, uses the initial starting number.
-
         Returns:
         - None
         """
-
         number = self.starting_number
         while number != 1:
             if number % 2 == 0:
@@ -62,3 +59,4 @@ class HailstoneCalculator:
         summary += f"Number of steps: {self.get_number_of_steps()}\n"
         summary += f"Final number: {self.sequence[-1]}"
         return summary
+

@@ -1,78 +1,10 @@
 
-# name: Build and Push Docker Images
-
-# on:
-#   push:
-#     # paths:
-#     #   - 'infra/aws/lambda/hailstone/**'  # Watch for changes in the hailstone lambda function path
-#     branches:
-#       - main
-#   workflow_run:
-#     workflows: ["Build and Publish Hailstone Calculator Package"]
-#     types:
-#       - completed
-
-
-# jobs:
-#   build_and_push_images:
-
-#     env:
-#       FUNCTION_PATH: 'infra/aws/lambda/hailstone'
-#       FUNCTION_NAME: 'hailstone_function'
-#       AWS_REGION: us-east-1
-#       AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
-#       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-#       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-
-#     runs-on: ubuntu-latest
-
-#     steps:
-#     - name: Checkout Repository
-#       uses: actions/checkout@v2
-
-#     - name: Set Up AWS Credentials
-#       uses: aws-actions/configure-aws-credentials@v1
-#       with:
-#         aws-access-key-id: $AWS_ACCESS_KEY_ID
-#         aws-secret-access-key: $AWS_SECRET_ACCESS_KEY
-#         aws-region: us-east-1
-
-
-#     - name: Check for changes in the function path
-#       id: check_changes
-#       run: |
-#         if [ -n "$(git diff --name-only $FUNCTION_PATH)" ]; then
-#           echo "changes=true" >> $GITHUB_ENV
-#         fi
-
-#         echo "changes is: '${{ env.changes }}'"
-
-#     - name: Set up Environment File
-#       run: echo "${{ secrets.ENV_FILE }}" > .env
-
-#     - name: Build and Push Docker Image for Lambda Function
-#       if: ${{ env.changes }} == 'true'
-#       run: |
-#         cd $FUNCTION_PATH
-#         make build_push
-#       env:
-#         AWS_ACCOUNT_ID: $AWS_ACCOUNT_ID
-#         AWS_REGION: $AWS_REGION
-#         DOCKER_IMAGE_NAME: $FUNCTION_NAME
-#         DOCKER_IMAGE_TAG: latest
-#         AWS_ECR_REPO_NAME: $FUNCTION_NAME
-#         AWS_ECR_REPO_URI: $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$FUNCTION_NAME
-
-
-
-
-
 name: Build and Push Docker Image
 
 on:
   push:
     branches:
-      - main
+      - dev
   workflow_run:
     workflows: ["Build and Publish Hailstone Calculator Package"]
     types:
@@ -91,8 +23,8 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-1  # Update with your AWS region
-          
+          aws-region: us-east-1  
+
       - name: Set up Environment File
         run: echo "${{ secrets.ENV_FILE }}" > .env
 

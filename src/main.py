@@ -31,8 +31,6 @@ def main() -> None:
 
         # Display results
         print("\nResults:")
-        print(f"Number of steps: {hailstone_calculator.get_number_of_steps()}")
-        print(f"List of steps: {hailstone_calculator.get_steps_list()}")
         print(hailstone_calculator.generate_textual_summary())
 
 

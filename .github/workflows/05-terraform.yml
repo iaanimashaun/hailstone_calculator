@@ -23,7 +23,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ secrets.AWS_REGION }}  # Replace with your AWS region for dev
+          aws-region: ${{ secrets.AWS_REGION }}  
       - name: Deploy to Pre-Prod
         run: |
           # Use the configuration file from the repository
@@ -38,7 +38,7 @@ jobs:
           terraform workspace select pre_prod
           terraform apply -auto-approve
         env:
-          AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION }} # Replace with your AWS region for pre-prod
+          AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION }} 
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
@@ -65,7 +65,7 @@ jobs:
     runs-on: ubuntu-latest
 
     needs: manual_approval
-    if: github.ref == 'refs/heads/main' # && needs.manual-approval.outputs.approval_granted == 'true'
+    if: github.ref == 'refs/heads/main' 
     steps:
     
       - name: Deploy to Prod
@@ -81,6 +81,6 @@ jobs:
           terraform workspace select prod
           terraform apply -auto-approve
         env:
-          AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION }}  # Replace with your AWS region for prod
+          AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION }}  
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
