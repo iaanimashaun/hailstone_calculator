@@ -9,7 +9,6 @@ class HailstoneCalculator:
         Parameters:
         - starting_number (int): The starting number
         for the hailstone sequence.
-        
         Raises:
         - ValueError: If the starting number is not a positive integer.
         """
@@ -64,7 +63,6 @@ class HailstoneCalculator:
         return summary
 
 
-
 def calculate_hailstone_sequence(starting_number: int) -> dict:
     """
     Calculates the hailstone sequence for the specified starting number.
@@ -73,13 +71,14 @@ def calculate_hailstone_sequence(starting_number: int) -> dict:
     - starting_number (int): The starting number for the hailstone sequence.
 
     Returns:
-    - tuple: A tuple containing the number of steps, list of steps, and textual summary.
+    - tuple: A tuple containing the number of steps,
+    list of steps, and textual summary.
     """
     hailstone_calculator = HailstoneCalculator(starting_number)
     hailstone_calculator.calculate_hailstone_sequence()
-    
+
     return {
-       "number_of_steps": hailstone_calculator.get_number_of_steps(),
+        "number_of_steps": hailstone_calculator.get_number_of_steps(),
         "list_of_steps": hailstone_calculator.get_steps_list(),
         "textual_summary": hailstone_calculator.generate_textual_summary()
     }

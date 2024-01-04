@@ -11,7 +11,9 @@ def main() -> None:
     - None
     """
     while True:
-        starting_number = input("Enter the starting number for hailstone sequence (or type 'exit' to quit): ")
+        starting_number = input("Enter the starting number \
+                                for hailstone sequence \
+                                (or type 'exit' to quit): ")
 
         if starting_number.lower() == "exit":
             print("Exiting the program.")
