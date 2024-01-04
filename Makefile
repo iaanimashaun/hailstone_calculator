@@ -74,7 +74,7 @@ DOCKER_IMAGE_NAME := hailstone_calculator
 build_push: build login create_repo push
 
 build:
-	cd $(LAMBDA_FUNCTION_DIR) && docker build -t $(DOCKER_IMAGE_NAME):$(DOCKER_IMAGE_TAG) . > $(LOG_DIR)/build_errors.txt 2>&1
+	cd $(LAMBDA_FUNCTION_DIR) && docker build -t $(DOCKER_IMAGE_NAME):$(DOCKER_IMAGE_TAG) . > build_errors.txt 2>&1
 
 login:
 	aws ecr get-login-password --region $(AWS_REGION) | docker login --username AWS --password-stdin $(AWS_ACCOUNT_ID).dkr.ecr.$(AWS_REGION).amazonaws.com
