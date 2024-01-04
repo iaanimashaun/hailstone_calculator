@@ -8,12 +8,10 @@ def lambda_handler(event, context):
 
     Parameters:
     - event (dict): Input event containing the "starting_number".
-    - context: AWS Lambda runtime context (unused in this function).
+    - context: AWS Lambda runtime context.
 
     Returns:
     dict: Response containing the calculated information:
-        - number_of_steps (int): Number of steps taken to reach the end of the sequence.
-        - list_of_steps (list): List of integers representing each step in the sequence.
         - textual_summary (str): Textual summary of the Hailstone sequence.
     """
     # Extract the starting_number from the Lambda event

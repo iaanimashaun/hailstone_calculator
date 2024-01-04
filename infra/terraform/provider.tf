@@ -7,10 +7,19 @@ terraform {
       source  = "hashicorp/aws"
       version = "~> 5.0"
     }
+    azurerm = {
+      source = "hashicorp/azurerm"
+      version = "~> 2.26"
+    }
   }
 }
 
-# Configure the AWS provider with the specified region
 provider "aws" {
   region = var.aws_region
+}
+
+provider "azurerm" {
+  features {
+    
+  }
 }

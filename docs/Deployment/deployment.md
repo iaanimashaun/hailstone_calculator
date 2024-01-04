@@ -48,6 +48,7 @@ make terraform_apply
 ```
 
 
+## Azure Function Deployment
 
 ### CI/CD Pipeline
 

@@ -30,4 +30,10 @@ The following documents provide step-by-step instructions:
 - Ensure AWS credentials are configured.
 
 
+## Further Development
+
+- Complete and test Azure terraform infrastructure and deployment
+- Use pull request to main branch to trigger Pre-prod and Prod deployment
+- Consider Other CICD tools like Jenkins 
+- Error handling
 

@@ -79,7 +79,7 @@ run:
 
 run_lambda:
 	# Build and run AWS Lambda function in a Docker container
-	cd $(LAMBDA_FUNCTION_DIR) && docker build --rm -t hailstone_calculator:test . > $(LOG_DIR)/build_errors.txt 2>&1 
+	cd $(LAMBDA_FUNCTION_DIR) && docker build --rm -t hailstone_calculator:test . > build_errors.txt 2>&1 
 	docker run --platform linux/amd64 -p 9000:8080 hailstone_calculator:test
 
 LAMBDA_ARGS='{"starting_number": 7}'

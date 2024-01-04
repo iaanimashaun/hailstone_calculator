@@ -13,8 +13,8 @@ def main() -> None:
     while True:
         starting_number = input(
             "Enter the starting number \
-                                for hailstone sequence \
-                                (or type 'exit' to quit): "
+            for hailstone sequence \
+            (or type 'exit' to quit): "
         )
 
         if starting_number.lower() == "exit":
