@@ -8,7 +8,7 @@ terraform {
       version = "~> 5.0"
     }
     azurerm = {
-      source = "hashicorp/azurerm"
+      source  = "hashicorp/azurerm"
       version = "~> 2.26"
     }
   }
@@ -20,6 +20,6 @@ provider "aws" {
 
 provider "azurerm" {
   features {
-    
+
   }
 }
