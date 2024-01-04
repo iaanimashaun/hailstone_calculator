@@ -9,14 +9,14 @@
 #2 DONE 0.0s
 
 #3 [internal] load metadata for docker.io/library/python:3.10-slim
-#3 DONE 0.2s
+#3 DONE 0.1s
 
 #4 [1/5] FROM docker.io/library/python:3.10-slim@sha256:25f03d17398b3f001e040fc951b4ee9404862f1b65c5eea1aa31c042dfdab527
 #4 resolve docker.io/library/python:3.10-slim@sha256:25f03d17398b3f001e040fc951b4ee9404862f1b65c5eea1aa31c042dfdab527 0.0s done
 #4 DONE 0.0s
 
 #5 [internal] load build context
-#5 transferring context: 8.91kB done
+#5 transferring context: 3.89kB done
 #5 DONE 0.0s
 
 #6 [2/5] WORKDIR /app/
@@ -26,18 +26,18 @@
 #7 DONE 0.1s
 
 #8 [4/5] COPY requirements/requirements.txt .
-#8 DONE 0.1s
+#8 DONE 0.0s
 
 #9 [5/5] RUN pip install --no-cache-dir -r requirements.txt
-#9 2.650 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
-#9 2.788 
-#9 2.788 [notice] A new release of pip is available: 23.0.1 -> 23.3.2
-#9 2.788 [notice] To update, run: pip install --upgrade pip
-#9 DONE 3.0s
+#9 2.042 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#9 2.176 
+#9 2.176 [notice] A new release of pip is available: 23.0.1 -> 23.3.2
+#9 2.176 [notice] To update, run: pip install --upgrade pip
+#9 DONE 2.3s
 
 #10 exporting to image
 #10 exporting layers
 #10 exporting layers 0.2s done
-#10 writing image sha256:0a47446b2bee715dfd84424f185cbeab455f284c4ffaaf4211152f8c8d9f4f08 done
-#10 naming to docker.io/library/hailstone_calculator 0.0s done
+#10 writing image sha256:f9b897e0ef7a92f9bdc04031090fa293a29f3a6e66a2ca4aa2652a93c2c072ee done
+#10 naming to docker.io/library/hailstone_calculator done
 #10 DONE 0.2s

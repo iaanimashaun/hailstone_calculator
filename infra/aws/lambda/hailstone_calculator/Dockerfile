@@ -9,5 +9,6 @@ RUN pip install --trusted-host 35.173.218.46:8081 --extra-index-url http://admin
 # Copy your Lambda function code into the container
 COPY app.py ${LAMBDA_TASK_ROOT}
 
+
 # Set the command to run the Lambda function handler
 CMD [ "app.lambda_handler" ]

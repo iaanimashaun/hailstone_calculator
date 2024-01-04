@@ -1,7 +1,7 @@
 
 import json
 import azure.functions as func
-from hailstone_calculator.calculator import HailstoneCalculator
+from hailstone_calculator.calculator import calculate_hailstone_sequence
 
 def main(req: func.HttpRequest) -> func.HttpResponse:
     """
@@ -16,20 +16,12 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     # Extract the starting_number from the HTTP request
     starting_number = int(req.params.get('starting_number'))
 
-    # Create an instance of HailstoneCalculator with the specified starting number
-    hailstone_calculator = HailstoneCalculator(starting_number)
-
-    # Calculate the hailstone sequence
-    hailstone_calculator.calculate_hailstone_sequence()
-
-    # Prepare the response with calculated information
-    response = {
-        "textual_summary": hailstone_calculator.generate_textual_summary(),
-    }
+    # Calculate Hailstone sequence
+    result = calculate_hailstone_sequence(starting_number_int)
 
     # Return the response to the Azure Function runtime
     return func.HttpResponse(
-        body=json.dumps(response),
+        body=json.dumps(result),
         mimetype="application/json",
         status_code=200
     )
