@@ -19,7 +19,6 @@ The following documents provide step-by-step instructions:
 - Build and run the Docker container locally using `make run`.
 - Access the application in the terminal.
 
-
 - Build and run the lambda function locally using `make run_lambda`.
 - Test application using `make invoke_lambda`
 
