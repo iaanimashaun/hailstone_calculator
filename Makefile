@@ -92,13 +92,17 @@ invoke_lambda:
 
 .PHONY: terraform_apply terraform_plan
 
-terraform_apply:
-	# Apply Terraform infrastructure changes
-	cd $(TERRAFORM_DIR) && terraform apply --auto-approve
+terraform_init:
+	# Initialize backend
+	cd $(TERRAFORM_DIR) && terraform init
 
 terraform_plan:
 	# Generate and display Terraform execution plan
 	cd $(TERRAFORM_DIR) && terraform plan
+
+terraform_apply:
+	# Apply Terraform infrastructure changes
+	cd $(TERRAFORM_DIR) && terraform apply --auto-approve
 
 
 .PHONY: all
