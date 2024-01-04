@@ -13,6 +13,7 @@ The following documents provide step-by-step instructions:
 - [Architecture Documentation](./docs/Architecture/architecture.md)
 - [Dependencies Documentation](./docs/Dependencies/dependencies.md)
 - [Deployment Documentation](./docs/Deployment/deployment.md)
+- [Tools](./docs/Deployment/tools.md)
 
 ## Local Development
 
@@ -27,6 +28,7 @@ The following documents provide step-by-step instructions:
 - Deploy the AWS Lambda function using `make build_push` then `make terraform_apply`.
 - Configure necessary environment variables in the `.env` file.
 - Ensure AWS credentials are configured.
+
 
 
 ## Further Development

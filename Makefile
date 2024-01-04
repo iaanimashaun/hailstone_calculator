@@ -1,4 +1,3 @@
-# Makefile for managing project tasks
 
 # Configuration
 ENV_FILE := .env

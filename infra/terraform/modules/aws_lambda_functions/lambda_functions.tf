@@ -5,7 +5,7 @@ resource "aws_lambda_function" "lambda_functions" {
   for_each = local.lambda_configurations
 
   function_name = each.value.function_name
-    role          = "arn:aws:iam::935487093752:role/adminRole"
+    role      = aws_iam_role.lambda_execution_role.arn
   timeout     = each.value.timeout
   image_uri   = each.value.ecr_image_uri
   memory_size = each.value.memory_size
