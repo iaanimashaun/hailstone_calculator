@@ -14,7 +14,7 @@ def lambda_handler(event, context):
         - textual_summary (str): Textual summary of the Hailstone sequence.
     """
     # Extract the starting_number from the Lambda event
-    starting_number = int(event.get("starting_number"))
+    starting_number_int = int(event.get("starting_number"))
 
     # Calculate Hailstone sequence
     result = calculate_hailstone_sequence(starting_number_int)
