@@ -124,3 +124,6 @@ The project includes a GitHub Actions workflow for
 - publishing to a private pypi repository 
 - build docker image and push to docker repository 
 - deploying to aws lambda using terraform
+
+
+

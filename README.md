@@ -17,6 +17,7 @@ The following documents provide step-by-step instructions:
 
 ## Local Development
 
+- Configure necessary environment variables in the `.env` file.
 - Build and run the Docker container locally using `make run`.
 - Access the application in the terminal.
 
@@ -26,15 +27,7 @@ The following documents provide step-by-step instructions:
 ## AWS Lambda Deployment
 
 - Deploy the AWS Lambda function using `make build_push` then `make terraform_apply`.
-- Configure necessary environment variables in the `.env` file.
 - Ensure AWS credentials are configured.
 
 
-
-## Further Development
-
-- Complete and test Azure terraform infrastructure and deployment
-- Use pull request to main branch to trigger Pre-prod and Prod deployment
-- Consider Other CICD tools like Jenkins 
-- Error handling
 
