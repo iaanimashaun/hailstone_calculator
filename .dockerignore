@@ -1,6 +1,0 @@
-# Ignore everything
-**
-
-# ... except for dependencies and source
-!src
-!requirements

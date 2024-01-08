@@ -2,6 +2,9 @@ import unittest
 from src.hailstone_calculator.calculator import HailstoneCalculator
 
 class TestHailstoneCalculator(unittest.TestCase):
+    """
+    Class for testing HailstoneCalculator.
+    """
     def test_hailstone_calculator_with_positive_number(self):
         """
         Test HailstoneCalculator with a positive starting number (5).
@@ -30,6 +33,12 @@ class TestHailstoneCalculator(unittest.TestCase):
         with self.assertRaises(ValueError):
             calculator = HailstoneCalculator(0)
 
+    def test_hailstone_calculator_with_string(self):
+        """
+        Test HailstoneCalculator with a starting number of 0.
+        """
+        with self.assertRaises(ValueError):
+            calculator = HailstoneCalculator("abc")
     
 if __name__ == "__main__":
     unittest.main()

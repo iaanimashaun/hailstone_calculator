@@ -1,7 +1,16 @@
+"""
+Module for hailstone calculator.
+"""
+
+
 from typing import List
 
 
 class HailstoneCalculator:
+    """
+    Class for calculating Hailstone sequence.
+    """
+
     def __init__(self, starting_number: int) -> None:
         """
         Initializes the HailstoneCalculator.
@@ -9,13 +18,19 @@ class HailstoneCalculator:
         Parameters:
         - starting_number (int): The starting number
         for the hailstone sequence.
+        
         Raises:
-        - ValueError: If the starting number is not a positive integer.
+        - ValueError: If the starting number is not a positive integer or a valid numeric string.
         """
-        if not isinstance(starting_number, int) or starting_number <= 0:
+        try:
+            self.starting_number = int(starting_number)
+        except ValueError:
+            raise ValueError("Starting number must be a positive integer or a valid numeric string.")
+        
+        if self.starting_number <= 0:
             raise ValueError("Starting number must be a positive integer.")
-        self.starting_number = starting_number
-        self.sequence = [starting_number]
+        
+        self.sequence = [self.starting_number]
 
     def calculate_hailstone_sequence(self) -> None:
         """
@@ -71,7 +86,7 @@ def calculate_hailstone_sequence(starting_number: int) -> dict:
     - starting_number (int): The starting number for the hailstone sequence.
 
     Returns:
-    - tuple: A tuple containing the number of steps,
+    - dict: A tuple containing the number of steps,
     list of steps, and textual summary.
     """
     hailstone_calculator = HailstoneCalculator(starting_number)
@@ -80,5 +95,5 @@ def calculate_hailstone_sequence(starting_number: int) -> dict:
     return {
         "number_of_steps": hailstone_calculator.get_number_of_steps(),
         "list_of_steps": hailstone_calculator.get_steps_list(),
-        "textual_summary": hailstone_calculator.generate_textual_summary()
+        "textual_summary": hailstone_calculator.generate_textual_summary(),
     }

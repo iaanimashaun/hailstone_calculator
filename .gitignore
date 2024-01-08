@@ -161,3 +161,10 @@ terraform.rc
 # Ignore any log files
 *.log
 
+config.json
+
+/home/ubuntu/projects/hailstone/infra/terraform/config.json
+
+/home/ubuntu/projects/hailstone/bin
+
+/home/ubuntu/projects/hailstone/hailstone

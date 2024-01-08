@@ -1,26 +1,23 @@
 
 
-# Create Lambda functions
-resource "aws_lambda_function" "lambda_functions" {
-  for_each = local.lambda_configurations
+# # Create Lambda functions
 
-  function_name = each.value.function_name
-    role      = aws_iam_role.lambda_execution_role.arn
-  timeout     = each.value.timeout
-  image_uri   = each.value.ecr_image_uri
-  memory_size = each.value.memory_size
+
+resource "aws_lambda_function" "lambda_function" {
+  function_name = var.lambda_configurations.function_name
+  role          = aws_iam_role.lambda_execution_role.arn
+  timeout       = var.lambda_configurations.timeout
+  image_uri     = "${data.aws_ecr_repository.hailstone_calculator.repository_url}:latest"
+  memory_size   = var.lambda_configurations.memory_size
   ephemeral_storage {
-    size = each.value.size
+    size = var.lambda_configurations.size
   }
 
   package_type = "Image"
 
   environment {
-    variables = each.value.environment
+    variables = var.enviroment_variables
   }
 
-
-  source_code_hash = trimprefix(each.value.ecr_image_uri_id, "sha256:")
-
-
+  source_code_hash = trimprefix(data.aws_ecr_repository.hailstone_calculator.id, "sha256:")
 }

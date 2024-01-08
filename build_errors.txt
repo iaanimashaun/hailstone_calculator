@@ -1,0 +1,40 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context: 2B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 587B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for public.ecr.aws/lambda/python:3.10
+#3 DONE 0.1s
+
+#4 [1/6] FROM public.ecr.aws/lambda/python:3.10@sha256:c02fab09213e6b646cb2ae55788ea9cfbf87700ca0ef50db8bb30427e7bea078
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 1.31kB done
+#5 DONE 0.0s
+
+#6 [4/6] COPY requirements/requirements.txt requirements.txt
+#6 CACHED
+
+#7 [5/6] RUN pip install --no-cache-dir -r requirements.txt
+#7 CACHED
+
+#8 [2/6] WORKDIR /app
+#8 CACHED
+
+#9 [3/6] COPY src/ /var/task/src
+#9 CACHED
+
+#10 [6/6] COPY infra/aws/lambda/hailstone_calculator/  /var/task
+#10 CACHED
+
+#11 exporting to image
+#11 exporting layers done
+#11 writing image sha256:96e137c0e7abc7d286313921de6072d75a68c14cd5e7f2d8c9abd30d4a84b0cc done
+#11 naming to docker.io/library/hailstone_calculator done
+#11 DONE 0.0s

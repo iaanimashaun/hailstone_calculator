@@ -1,4 +1,3 @@
--r requirements.txt
-
-# testing requirements
 pytest
+httpx
+fastapi
