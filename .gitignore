@@ -168,3 +168,5 @@ config.json
 /home/ubuntu/projects/hailstone/bin
 
 /home/ubuntu/projects/hailstone/hailstone
+/home/ubuntu/projects/hailstone/logs/build_errors.txt
+build_errors.txt
