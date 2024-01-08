@@ -14,7 +14,7 @@ ifeq ($(OS),Windows_NT)
                         terraform plan -var-file=%VAR_FILE%
 	 
 	TERRAFORM_APPLY_CMD = cd $(TERRAFORM_DIR) && \
-                        for /f "delims=" %%i in ('terraform workspace show') do set CURRENT_TERRAFORM_WORKSPACE=%%i && \
+                        set CURRENT_TERRAFORM_WORKSPACE=$$(terraform workspace show) && \
                         echo workspace is %CURRENT_TERRAFORM_WORKSPACE% && \
                         set VAR_FILE=%CURRENT_TERRAFORM_WORKSPACE%.tfvars && \
                         echo Using variable file: %VAR_FILE% && \
