@@ -47,6 +47,14 @@ The project relies on several software dependencies for development, testing, an
 
 - **Azure Functions Core Tools:** Command-line interface for creating Azure Functions 
 
+### 2.6 Make
+
+- **Make:** Build and Automation of Scripts 
+
+### 2.7 Git
+
+- **Git:** For Version Control
+
 ## 3. Project Setup
 
 To set up the project, follow these steps:
