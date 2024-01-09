@@ -10,7 +10,7 @@ The project relies on several software dependencies for development, testing, an
 
 ### 2.1 Python and Pip
 
-- **Python:** Version 3.6 or higher
+- **Python:** Version 3.10
 - **Pip:** Python package installer
 
 ### 2.2 Docker
