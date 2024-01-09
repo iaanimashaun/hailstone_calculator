@@ -18,7 +18,8 @@ async def hailstone_sequence(starting_number: int):
         starting_number (int): The starting number for the Hailstone sequence.
 
     Returns:
-        List[int]: The calculated Hailstone sequence as a list of integers.
+    - dict: A dict containing the number of steps,
+    list of steps, and textual summary.
     """
     result = calculate_hailstone_sequence(starting_number)
     return result

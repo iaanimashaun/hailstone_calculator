@@ -142,7 +142,7 @@ create_repo_azure:
 build_push_azure: 
 	# Tag and push Docker image to Azure Container Registry
 	$(COPY_CMD) $(SRC_DIR) $(AZURE_FUNCTION_DIR)/
-	$(COPY_CMD) requirements/requirements.txt $(AZURE_FUNCTION_DIR)/
+	$(COPY_CMD) requirements/requirements.txt $(AZURE_FUNCTION_DIR)/cd
 	$(DOCKER_BUILD_PUSH_CMD_AZURE)
 
 

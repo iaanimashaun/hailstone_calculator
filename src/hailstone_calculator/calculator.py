@@ -86,7 +86,7 @@ def calculate_hailstone_sequence(starting_number: int) -> dict:
     - starting_number (int): The starting number for the hailstone sequence.
 
     Returns:
-    - dict: A tuple containing the number of steps,
+    - dict: A dict containing the number of steps,
     list of steps, and textual summary.
     """
     hailstone_calculator = HailstoneCalculator(starting_number)
