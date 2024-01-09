@@ -1,5 +1,5 @@
 """
-Module for setting up the project.
+API for hailstone calculator.
 """
 
 from fastapi import FastAPI
