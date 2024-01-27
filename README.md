@@ -127,7 +127,7 @@ Navigate to the project directory and create a Conda environment:
 
 ```bash
 cd hailstone_calculator
-conda create --name myenv python=3.8
+conda create --name myenv python=3.10
 ```
 
 Activate the Conda environment:
